@@ -4,6 +4,8 @@ export interface Tower {
   description: string;
 }
 
+// Array of meta Datas
+
 export const towers: Tower[] = [
   {
     id: 'A',

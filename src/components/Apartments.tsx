@@ -5,8 +5,21 @@ interface ApartmentsProps {
   onSelectApartment?: (apartmentId: string) => void;
 }
 
+
+
+
+
 const Apartments = ({ floorId, onSelectApartment }: ApartmentsProps) => {
+
+// Uses the floorId prop to filter the global apartments data and get only the apartments for the selected floor.
+
+
   const floorApartments = apartments.filter(a => a.floorId === floorId); // to know which is clicked
+
+
+
+  
+//   displays all apartment units available on a that particular floor.
 
   return (
     <div className="bg-white rounded-2xl shadow p-8 mx-auto mt-8 border border-sky-100">
@@ -15,11 +28,11 @@ const Apartments = ({ floorId, onSelectApartment }: ApartmentsProps) => {
         {floorApartments.map((apt) => (
           <div
             key={apt.id}
-            className="group mt-8 md:mt-0 bg-sky-50 rounded-xl overflow-hidden flex flex-col sm:flex-row items-stretch flex-1 cursor-pointer transition-all duration-200 hover:shadow-xl hover:-translate-y-1 hover:bg-sky-100 border border-sky-100"
+            className="group  mt-8 md:mt-0 bg-sky-50 rounded-xl overflow-hidden flex flex-col sm:flex-row items-stretch flex-1 cursor-pointer transition-all duration-200 hover:shadow-xl hover:-translate-y-1 hover:bg-sky-100 border border-sky-100"
             onClick={() => onSelectApartment && onSelectApartment(apt.id)}
             tabIndex={0}
           >
-            <div className="flex-1 flex items-center justify-center bg-sky-100 transition-colors duration-200 group-hover:bg-sky-200 group-focus-within:bg-sky-200">
+            <div className=" mt-10 w-[100%] flex-1 flex items-center justify-center bg-sky-100 transition-colors duration-200 group-hover:bg-sky-200 group-focus-within:bg-sky-200">
               <img
                 src={apt.image}
                 alt={apt.name}

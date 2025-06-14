@@ -7,10 +7,15 @@ interface FloorsProps {
   onSelectFloor?: (floorId: string) => void;
 }
 
+
+
 const Floors = ({ towerId, onSelectFloor }: FloorsProps) => {
-  // Only use local state if onSelectFloor is not provided (for backward compatibility)
+ 
   const [selectedFloor, setSelectedFloor] = onSelectFloor ? [null, () => {}] : useState<string | null>(null);
   
+
+//   Here we Uses the towerId prop to filter the global floors data and get only the floors for the selected tower.
+
   const towerFloors = floors.filter(floor => floor.towerId === towerId).reverse();
   const details = towerDetails[towerId];
 
@@ -21,6 +26,9 @@ const Floors = ({ towerId, onSelectFloor }: FloorsProps) => {
       setSelectedFloor(floorId);
     }
   };
+
+
+  // if a floor is selected, show the Apartments view for that floor.
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -41,7 +49,9 @@ const Floors = ({ towerId, onSelectFloor }: FloorsProps) => {
         ))}
       </div>
 
+
       {/* Tower Details Section */}
+
       <div className="bg-white rounded-2xl shadow p-6 mx-auto border border-sky-100">
         <h3 className="text-xl font-bold mb-4 text-emerald-700">Tower Details</h3>
         <div className="space-y-4">

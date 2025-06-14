@@ -13,12 +13,14 @@ const features = [
   'Central air conditioning',
 ];
 
-// const price = '$633,648';
-// const availableFrom = 'Immediate';
+
+// Uses the apartmentId prop to find the corresponding apartment object from the global apartments data.
 
 const ApartmentDetail = ({ apartmentId }: ApartmentDetailProps) => {
   const apt = apartments.find(a => a.id === apartmentId);
   if (!apt) return <div>Apartment not found.</div>;
+
+
 
   return (
   
@@ -30,7 +32,7 @@ const ApartmentDetail = ({ apartmentId }: ApartmentDetailProps) => {
       <img 
         src={apt.image} 
         alt={apt.name} 
-        className="object-cover w-full h-full rounded-2xl" 
+        className="object-cover w-full h-full  rounded-tl-2xl rounded-tl-2xl" 
       />
     </div>
 

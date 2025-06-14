@@ -5,10 +5,15 @@ import Floors from './Floors';
 import Apartments from './Apartments';
 import ApartmentDetail from './ApartmentDetail';
 
+
+
 const Towers = () => {
   const [selectedTower, setSelectedTower] = useState<string | null>(null);
   const [selectedFloor, setSelectedFloor] = useState<string | null>(null);
   const [selectedApartment, setSelectedApartment] = useState<string | null>(null);
+
+
+
 
   // Back from ApartmentDetail to Apartments
   const handleBackToApartments = () => setSelectedApartment(null);
@@ -24,6 +29,11 @@ const Towers = () => {
     setSelectedApartment(null);
   };
 
+
+
+
+  // if an apartment is selected, show the ApartmentDetail view for that apartment.
+
   if (selectedTower && selectedFloor && selectedApartment) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -32,6 +42,10 @@ const Towers = () => {
       </div>
     );
   }
+
+
+
+  // if a floor is selected, show the Apartments view for that floor.
 
   if (selectedTower && selectedFloor) {
     return (
@@ -42,6 +56,10 @@ const Towers = () => {
     );
   }
 
+
+
+  // if a tower is selected, show the Floors view for that tower.
+
   if (selectedTower) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -50,6 +68,12 @@ const Towers = () => {
       </div>
     );
   }
+
+
+
+
+// other wise show the tower selection card
+
 
   return (
     <div className="container mx-auto px-4 py-8">
