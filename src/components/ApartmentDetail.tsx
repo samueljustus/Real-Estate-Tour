@@ -13,8 +13,8 @@ const features = [
   'Central air conditioning',
 ];
 
-const price = '$633,648';
-const availableFrom = 'Immediate';
+// const price = '$633,648';
+// const availableFrom = 'Immediate';
 
 const ApartmentDetail = ({ apartmentId }: ApartmentDetailProps) => {
   const apt = apartments.find(a => a.id === apartmentId);
@@ -34,7 +34,7 @@ const ApartmentDetail = ({ apartmentId }: ApartmentDetailProps) => {
       />
     </div>
 
-    {apt.images.map((image, i) => (             
+    {apt.images.map((image) => (             
       <div className="relative">
         <img 
           src={image} 
